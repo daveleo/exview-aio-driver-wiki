@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hex Builder - eXview AIO Driver Wiki</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body data-page="builder">
+    <header class="site-header">
+      <div class="shell header-row">
+        <a class="brand" href="./index.html">eXview AIO Driver Wiki</a>
+        <nav class="site-nav">
+          <a href="./index.html">Overview</a>
+          <a href="./protocol.html">Protocol</a>
+          <a href="./commands.html">Commands</a>
+          <a href="./numeric-controls.html">Numeric Controls</a>
+          <a href="./builder.html" class="is-active">Hex Builder</a>
+          <a href="./queries.html">Queries & Responses</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="panel">
+        <h1>Hex Builder</h1>
+        <p>
+          Build numeric TX packets directly from eXview AIO protocol templates. Select a command, enter a UI value, and copy the full
+          packet.
+        </p>
+      </section>
+
+      <section class="panel" data-hex-builder>
+        <h2>Packet Builder</h2>
+        <p>The highlighted byte is the payload value; the green byte is the final checksum.</p>
+      </section>
+    </main>
+
+    <script src="./data/commands.js"></script>
+    <script src="./assets/app.js"></script>
+  </body>
+</html>

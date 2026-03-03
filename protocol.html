@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Protocol - eXview AIO Driver Wiki</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body data-page="protocol">
+    <header class="site-header">
+      <div class="shell header-row">
+        <a class="brand" href="./index.html">eXview AIO Driver Wiki</a>
+        <nav class="site-nav">
+          <a href="./index.html">Overview</a>
+          <a href="./protocol.html" class="is-active">Protocol</a>
+          <a href="./commands.html">Commands</a>
+          <a href="./numeric-controls.html">Numeric Controls</a>
+          <a href="./builder.html">Hex Builder</a>
+          <a href="./queries.html">Queries & Responses</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="panel">
+        <h1>Packet Structure and Parsing</h1>
+        <p>This page mirrors parsing and checksum behavior from <code>device-certify.ts</code>.</p>
+      </section>
+
+      <section class="panel">
+        <h2>1) UDP-like Signature</h2>
+        <p>Valid packets begin with seven <code>0x55</code> bytes:</p>
+        <pre><code>55 55 55 55 55 55 55 ...</code></pre>
+      </section>
+
+      <section class="panel">
+        <h2>2) Reply Code Decoding (Command Code)</h2>
+        <p>Reply code extraction scans packet bytes starting near index 8 for marker <code>0xD0</code>:</p>
+        <ol>
+          <li>Find first <code>D0</code> from index 8 up to index 40.</li>
+          <li>Read next two bytes: <code>low = bytes[i+1]</code>, <code>high = bytes[i+2]</code>.</li>
+          <li>Reply code string is <code>high + low</code> in uppercase.</li>
+        </ol>
+        <pre><code>D0 02 C2  => reply code C202</code></pre>
+      </section>
+
+      <section class="panel">
+        <h2>3) Payload Extraction (Tail Payload Pattern)</h2>
+        <p>Payload is detected near the tail using this structure:</p>
+        <pre><code>00 &lt;len&gt; 00 &lt;data bytes&gt; &lt;checksum&gt;</code></pre>
+        <ul>
+          <li><code>&lt;len&gt;</code> = number of data bytes</li>
+          <li><code>&lt;data bytes&gt;</code> must be exactly <code>&lt;len&gt;</code> bytes</li>
+          <li>checksum is final packet byte</li>
+        </ul>
+        <p>Concrete examples:</p>
+        <ul>
+          <li>Query with 1-byte data: <code>00 01 00 64 DA</code> (data <code>64</code>)</li>
+          <li>ACK with 2-byte status: <code>00 02 00 01 00 7A</code> (status bytes <code>01 00</code>)</li>
+        </ul>
+        <p>Status decode is little-endian:</p>
+        <pre><code>status = data[0] | (data[1] &lt;&lt; 8)</code></pre>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Status Hex</th>
+                <th>Meaning</th>
+              </tr>
+            </thead>
+            <tbody id="ackStatusBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>4) Checksum (computePdfChecksum)</h2>
+        <p>Normal rule used by most commands:</p>
+        <pre><code>checksum = (sum of bytes[index 8 .. len-2]) &amp; 0xFF</code></pre>
+        <p>That means include the 9th byte through the byte before checksum, then mask with <code>0xFF</code>.</p>
+      </section>
+
+      <section class="panel">
+        <h2>5) Special Formula-base Checksums</h2>
+        <p>Some numeric set commands use:</p>
+        <pre><code>checksum = (base + value) &amp; 0xFF</code></pre>
+        <ul id="formulaBaseList"></ul>
+        <p>For other numeric commands, use the normal sum rule.</p>
+      </section>
+
+      <section class="panel">
+        <h2>Tools</h2>
+        <p>Use the dedicated <a href="./builder.html">Hex Builder</a> page for packet creation and checksum recomputation.</p>
+        <p>Use <a href="./queries.html">Queries &amp; Responses</a> for query request/response interpretation.</p>
+      </section>
+    </main>
+
+    <script src="./data/commands.js"></script>
+    <script src="./assets/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Queries & Responses - eXview AIO Driver Wiki</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body data-page="queries">
+    <header class="site-header">
+      <div class="shell header-row">
+        <a class="brand" href="./index.html">eXview AIO Driver Wiki</a>
+        <nav class="site-nav">
+          <a href="./index.html">Overview</a>
+          <a href="./protocol.html">Protocol</a>
+          <a href="./commands.html">Commands</a>
+          <a href="./numeric-controls.html">Numeric Controls</a>
+          <a href="./builder.html">Hex Builder</a>
+          <a href="./queries.html" class="is-active">Queries & Responses</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="panel">
+        <h1>Queries and Responses</h1>
+        <p>Dedicated view for query commands with documentation-based notes describing each reply format and meaning.</p>
+      </section>
+
+      <section class="panel">
+        <div class="filters">
+          <label>
+            Query Name
+            <input id="queryNameFilter" type="search" placeholder="name, set/reply code..." />
+          </label>
+          <label>
+            Contains Hex
+            <input id="queryHexFilter" type="text" placeholder="ex: 00 01 00" />
+          </label>
+        </div>
+        <p id="queryCount" class="muted"></p>
+
+        <div class="table-wrap wide">
+          <table>
+            <thead>
+              <tr>
+                <th>Query Name</th>
+                <th>Set / Reply</th>
+                <th>Query TX</th>
+                <th>Sample RX</th>
+                <th>Reply Note</th>
+              </tr>
+            </thead>
+            <tbody id="queriesTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="./data/commands.js"></script>
+    <script src="./assets/app.js"></script>
+  </body>
+</html>

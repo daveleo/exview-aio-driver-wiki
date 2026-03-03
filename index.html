@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>eXview AIO Driver Wiki</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body data-page="index">
+    <header class="site-header">
+      <div class="shell header-row">
+        <a class="brand" href="./index.html">eXview AIO Driver Wiki</a>
+        <nav class="site-nav">
+          <a href="./index.html" class="is-active">Overview</a>
+          <a href="./protocol.html">Protocol</a>
+          <a href="./commands.html">Commands</a>
+          <a href="./numeric-controls.html">Numeric Controls</a>
+          <a href="./builder.html">Hex Builder</a>
+          <a href="./queries.html">Queries & Responses</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="hero">
+        <h1>Driver Creation Wiki for eXview AIO (Hex Protocol)</h1>
+        <p>
+          This site is generated from the official protocol workbook, certification logic, and recorded truth records. It is intended
+          as an offline developer reference for command TX frames, RX parsing, checksums, and numeric control math.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>Start Here</h2>
+        <ol>
+          <li>
+            Open <a href="./protocol.html">Protocol</a> for frame anatomy, code decoding, payload extraction, and checksum rules that
+            match <code>device-certify.ts</code>.
+          </li>
+          <li>
+            Open <a href="./commands.html">Commands</a> for the searchable command matrix (set/query, TX, RX, payload length, notes).
+          </li>
+          <li>
+            Open <a href="./numeric-controls.html">Numeric Controls</a> for formulas and the hex builder for volume/brightness/contrast/
+            saturation/hue/RGB gain.
+          </li>
+          <li>Open <a href="./builder.html">Hex Builder</a> for dedicated packet construction and checksum calculation.</li>
+          <li>Open <a href="./queries.html">Queries &amp; Responses</a> for query TX commands and expected reply payload parsing.</li>
+        </ol>
+      </section>
+    </main>
+
+    <script src="./data/commands.js"></script>
+    <script src="./assets/app.js"></script>
+  </body>
+</html>

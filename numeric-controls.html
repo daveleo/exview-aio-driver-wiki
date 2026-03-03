@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Numeric Controls - eXview AIO Driver Wiki</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body data-page="numeric-controls">
+    <header class="site-header">
+      <div class="shell header-row">
+        <a class="brand" href="./index.html">eXview AIO Driver Wiki</a>
+        <nav class="site-nav">
+          <a href="./index.html">Overview</a>
+          <a href="./protocol.html">Protocol</a>
+          <a href="./commands.html">Commands</a>
+          <a href="./numeric-controls.html" class="is-active">Numeric Controls</a>
+          <a href="./builder.html">Hex Builder</a>
+          <a href="./queries.html">Queries & Responses</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="panel">
+        <h1>Numeric Parameter Calculations</h1>
+        <p>
+          These are the control values developers usually need for automation: volume, brightness, contrast, saturation, hue, and RGB
+          gains.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>Formulas and Ranges</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Control</th>
+                <th>UI Range</th>
+                <th>Protocol Data Byte</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Volume (C203)</td>
+                <td>0..100</td>
+                <td><code>proto = clamp(round(ui), 0, 100)</code> -> <code>0x00..0x64</code></td>
+                <td>Special checksum rule: <code>(0x5B + value) &amp; 0xFF</code></td>
+              </tr>
+              <tr>
+                <td>Brightness (C21F)</td>
+                <td>0..100</td>
+                <td><code>proto = clamp(round(ui), 0, 100)</code> -> <code>0x00..0x64</code></td>
+                <td>Special checksum rule: <code>(0x77 + value) &amp; 0xFF</code></td>
+              </tr>
+              <tr>
+                <td>Contrast (C217)</td>
+                <td>0..100</td>
+                <td><code>proto = clamp(round(ui), 0, 100)</code> -> <code>0x00..0x64</code></td>
+                <td>Normal checksum sum rule</td>
+              </tr>
+              <tr>
+                <td>Saturation (C259)</td>
+                <td>0..100</td>
+                <td><code>proto = clamp(round(ui), 0, 100)</code> -> <code>0x00..0x64</code></td>
+                <td>Normal checksum sum rule</td>
+              </tr>
+              <tr>
+                <td>Hue (C262)</td>
+                <td>-50..+50</td>
+                <td>
+                  <code>proto = clamp(round(ui + 50), 0, 100)</code> -> <code>0x00..0x64</code><br />
+                  <code>ui = proto - 50</code>
+                </td>
+                <td>Normal checksum sum rule</td>
+              </tr>
+              <tr>
+                <td>Red gain (C223)</td>
+                <td>0..100</td>
+                <td><code>0x00..0x64</code></td>
+                <td>Normal checksum sum rule</td>
+              </tr>
+              <tr>
+                <td>Green gain (C227)</td>
+                <td>0..100</td>
+                <td><code>0x00..0x64</code></td>
+                <td>Normal checksum sum rule</td>
+              </tr>
+              <tr>
+                <td>Blue gain (C22B)</td>
+                <td>0..100</td>
+                <td><code>0x00..0x64</code></td>
+                <td>Normal checksum sum rule</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Builder Tool</h2>
+        <p>Use the dedicated <a href="./builder.html">Hex Builder</a> page for numeric packet generation and checksum calculation.</p>
+      </section>
+    </main>
+
+    <script src="./data/commands.js"></script>
+    <script src="./assets/app.js"></script>
+  </body>
+</html>

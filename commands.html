@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Commands - eXview AIO Driver Wiki</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body data-page="commands">
+    <header class="site-header">
+      <div class="shell header-row">
+        <a class="brand" href="./index.html">eXview AIO Driver Wiki</a>
+        <nav class="site-nav">
+          <a href="./index.html">Overview</a>
+          <a href="./protocol.html">Protocol</a>
+          <a href="./commands.html" class="is-active">Commands</a>
+          <a href="./numeric-controls.html">Numeric Controls</a>
+          <a href="./builder.html">Hex Builder</a>
+          <a href="./queries.html">Queries & Responses</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="panel">
+        <h1>Command Reference</h1>
+        <p>Search and filter all parsed command rows from workbook sheets.</p>
+
+        <div class="filters">
+          <label>
+            Search
+            <input id="commandSearch" type="search" placeholder="function, description, code, hex..." />
+          </label>
+          <label>
+            Function
+            <select id="commandFunctionFilter">
+              <option value="">All</option>
+            </select>
+          </label>
+          <label>
+            Set/Reply Code
+            <input id="commandCodeFilter" type="text" placeholder="ex: C21F" />
+          </label>
+        </div>
+
+        <p id="commandCount" class="muted"></p>
+
+        <div class="table-wrap wide">
+          <table>
+            <thead>
+              <tr>
+                <th>Function</th>
+                <th>Description</th>
+                <th>Set / Reply</th>
+                <th>TX Hex</th>
+                <th>RX Hex</th>
+                <th>Payload Len</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody id="commandsTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="./data/commands.js"></script>
+    <script src="./assets/app.js"></script>
+  </body>
+</html>
