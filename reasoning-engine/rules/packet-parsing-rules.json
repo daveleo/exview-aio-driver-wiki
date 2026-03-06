@@ -1,0 +1,56 @@
+{
+  "headerValidation": {
+    "requiredLeadingBytesHex": [
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55"
+    ],
+    "minPacketLength": 10
+  },
+  "replyCodeDecoding": {
+    "markerHex": "D0",
+    "scanStartIndex": 8,
+    "scanEndIndexHint": 40,
+    "algorithm": [
+      "Scan bytes from index 8 for marker 0xD0.",
+      "Read low = bytes[i+1], high = bytes[i+2].",
+      "Reply code string is high followed by low in uppercase hex."
+    ],
+    "example": {
+      "markerSequence": "D0 02 C2",
+      "decodedReplyCode": "C202"
+    }
+  },
+  "tailPayloadExtraction": {
+    "pattern": "00 <len> 00 <data...> <checksum>",
+    "algorithm": [
+      "Search near the packet tail for marker 0x00.",
+      "Interpret next byte as len.",
+      "Require next byte after len to be 0x00.",
+      "Read exactly len data bytes.",
+      "Require checksum byte to be the final byte of packet."
+    ],
+    "examples": [
+      {
+        "tailHex": "00 01 00 64 DA",
+        "payloadLength": 1,
+        "dataHex": "64",
+        "decodedValue": 100
+      },
+      {
+        "tailHex": "00 02 00 01 00 7A",
+        "payloadLength": 2,
+        "dataHex": "01 00",
+        "statusLittleEndianHex": "0x0001"
+      }
+    ]
+  },
+  "statusDecoding": {
+    "byteOrder": "little-endian",
+    "expression": "status = data[0] | (data[1] << 8)"
+  }
+}

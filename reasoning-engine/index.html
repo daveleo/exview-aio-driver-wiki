@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>eXview AIO Protocol Reasoning Engine</title>
+    <style>
+      :root {
+        --bg: #f7f9fb;
+        --card: #ffffff;
+        --line: #d8e0e6;
+        --text: #10212a;
+        --muted: #516573;
+        --accent: #0d6f8f;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", "Inter", sans-serif;
+        color: var(--text);
+        background: linear-gradient(180deg, #eef4f7 0%, var(--bg) 40%);
+      }
+      .shell {
+        width: min(1080px, 92vw);
+        margin: 0 auto;
+        padding: 1.2rem 0 2rem;
+      }
+      .panel {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 1rem 1.1rem;
+        margin-bottom: 0.9rem;
+      }
+      h1,
+      h2 {
+        margin: 0 0 0.6rem;
+      }
+      p {
+        margin: 0.35rem 0;
+        color: var(--muted);
+      }
+      .grid {
+        display: grid;
+        gap: 0.8rem;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+      ul {
+        margin: 0.3rem 0 0;
+        padding-left: 1rem;
+      }
+      li {
+        margin: 0.22rem 0;
+      }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      code {
+        background: #f2f7fa;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 0.05rem 0.28rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="panel">
+        <h1>eXview AIO Protocol Reasoning Engine</h1>
+        <p>
+          AI-ingestable protocol knowledge base with deterministic rule files, generated datasets, worked examples, helper code,
+          QA grounding, and prompt templates.
+        </p>
+      </section>
+
+      <section class="panel grid">
+        <div>
+          <h2>Start</h2>
+          <ul>
+            <li><a href="./README.md">README</a></li>
+            <li><a href="./knowledge/overview.md">Knowledge Overview</a></li>
+            <li><a href="./commands/command-index.md">Command Index</a></li>
+            <li><a href="./examples/worked-examples.md">Worked Examples</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Rules</h2>
+          <ul>
+            <li><a href="./rules/packet-construction-rules.json">Packet Construction Rules</a></li>
+            <li><a href="./rules/packet-parsing-rules.json">Packet Parsing Rules</a></li>
+            <li><a href="./rules/numeric-encoding-rules.json">Numeric Encoding Rules</a></li>
+            <li><a href="./rules/status-code-map.json">Status Map</a></li>
+            <li><a href="./rules/reply-code-map.json">Reply Code Map</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Data</h2>
+          <ul>
+            <li><a href="./data/commands.json">commands.json</a></li>
+            <li><a href="./data/examples.json">examples.json</a></li>
+            <li><a href="./data/controls.json">controls.json</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Integration</h2>
+          <ul>
+            <li><a href="./code/js/protocol.js">JS Helpers</a></li>
+            <li><a href="./code/python/protocol.py">Python Helpers</a></li>
+            <li><a href="./code/csharp/ProtocolHelpers.cs">C# Helpers</a></li>
+            <li><a href="./prompts/copilot-studio-grounding.md">Copilot Studio Grounding</a></li>
+            <li><a href="./qa/grounding-qa.jsonl">Grounding QA JSONL</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Rebuild</h2>
+        <p>Run:</p>
+        <p><code>node scripts/build_reasoning_assets.mjs</code></p>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+{"question":"How do I parse an RX packet for eXview AIO?","answer":"Validate 7-byte 0x55 header, find D0 marker from index 8, decode reply code as high+low, extract tail payload 00 <len> 00 <data...> <checksum>, then decode status/value."}
+{"question":"What is the default checksum formula?","answer":"checksum = (sum of bytes index 8 through len-2) & 0xFF."}
+{"question":"Which commands use special checksum rules?","answer":"Volume set C203 uses (0x5B + value) & 0xFF. Brightness set C21F uses (0x77 + value) & 0xFF."}
+{"question":"How do I decode reply code C202 from bytes?","answer":"If sequence is D0 02 C2, low=02 high=C2, decoded reply code is C202."}
+{"question":"How do I decode little-endian status bytes 01 00?","answer":"status = data[0] | (data[1] << 8) => 0x0001 (Success)."}
+{"question":"What does status 0x8001 mean?","answer":"Failure: busy."}
+{"question":"What does status 0x8002 mean?","answer":"Failure: occupied."}
+{"question":"How should a driver retry when busy?","answer":"For 0x8001 busy, retry with bounded attempts and delay/jitter; log TX/RX and reply code."}
+{"question":"How should a driver handle no-reply?","answer":"Treat transport no-reply separately from logical status failures and apply bounded retry policy."}
+{"question":"What is the packet header signature?","answer":"All valid packets begin with seven 0x55 bytes: 55 55 55 55 55 55 55."}
+{"question":"How do I set volume?","answer":"Use set code C203, encode UI value with formula proto = clamp(round(ui), 0, 100), insert at value index 38, then compute checksum using formula base 0x5B."}
+{"question":"How do I query current volume?","answer":"Send query set code C201 and parse reply code C202; extract one-byte value from tail payload when applicable."}
+{"question":"What is the UI range for volume?","answer":"UI range is 0..100; protocol range is 0..100 (0x00..0x64)."}
+{"question":"How do I decode volume query response?","answer":"Extract tail payload using 00 <len> 00 <data...> <checksum>, parse value byte, then apply decoding formula ui = proto."}
+{"question":"What reply code should I expect after setting volume?","answer":"Set C203 expects reply code C204 with 2-byte status payload."}
+{"question":"How do I set brightness?","answer":"Use set code C21F, encode UI value with formula proto = clamp(round(ui), 0, 100), insert at value index 38, then compute checksum using formula base 0x77."}
+{"question":"How do I query current brightness?","answer":"Send query set code C21D and parse reply code C21E; extract one-byte value from tail payload when applicable."}
+{"question":"What is the UI range for brightness?","answer":"UI range is 0..100; protocol range is 0..100 (0x00..0x64)."}
+{"question":"How do I decode brightness query response?","answer":"Extract tail payload using 00 <len> 00 <data...> <checksum>, parse value byte, then apply decoding formula ui = proto."}
+{"question":"What reply code should I expect after setting brightness?","answer":"Set C21F expects reply code C220 with 2-byte status payload."}
+{"question":"How do I set contrast?","answer":"Use set code C217, encode UI value with formula proto = clamp(round(ui), 0, 100), insert at value index 38, then compute checksum using default sum rule."}
+{"question":"How do I query current contrast?","answer":"Send query set code C215 and parse reply code C216; extract one-byte value from tail payload when applicable."}
+{"question":"What is the UI range for contrast?","answer":"UI range is 0..100; protocol range is 0..100 (0x00..0x64)."}
+{"question":"How do I decode contrast query response?","answer":"Extract tail payload using 00 <len> 00 <data...> <checksum>, parse value byte, then apply decoding formula ui = proto."}
+{"question":"What reply code should I expect after setting contrast?","answer":"Set C217 expects reply code C218 with 2-byte status payload."}
+{"question":"How do I set hue?","answer":"Use set code C262, encode UI value with formula proto = clamp(round(ui + 50), 0, 100), insert at value index 38, then compute checksum using default sum rule."}
+{"question":"How do I query current hue?","answer":"Send query set code C264 and parse reply code C265; extract one-byte value from tail payload when applicable."}
+{"question":"What is the UI range for hue?","answer":"UI range is -50..50; protocol range is 0..100 (0x00..0x64)."}
+{"question":"How do I decode hue query response?","answer":"Extract tail payload using 00 <len> 00 <data...> <checksum>, parse value byte, then apply decoding formula ui = proto - 50."}
+{"question":"What reply code should I expect after setting hue?","answer":"Set C262 expects reply code C263 with 2-byte status payload."}
+{"question":"How do I set saturation?","answer":"Use set code C259, encode UI value with formula proto = clamp(round(ui), 0, 100), insert at value index 38, then compute checksum using default sum rule."}
+{"question":"How do I query current saturation?","answer":"Send query set code C257 and parse reply code C258; extract one-byte value from tail payload when applicable."}
+{"question":"What is the UI range for saturation?","answer":"UI range is 0..100; protocol range is 0..100 (0x00..0x64)."}
+{"question":"How do I decode saturation query response?","answer":"Extract tail payload using 00 <len> 00 <data...> <checksum>, parse value byte, then apply decoding formula ui = proto."}
+{"question":"What reply code should I expect after setting saturation?","answer":"Set C259 expects reply code C25A with 2-byte status payload."}
+{"question":"How do I set red gain?","answer":"Use set code C223, encode UI value with formula proto = clamp(round(ui), 0, 100), insert at value index 38, then compute checksum using default sum rule."}
+{"question":"How do I query current red gain?","answer":"Send query set code C221 and parse reply code C222; extract one-byte value from tail payload when applicable."}
+{"question":"What is the UI range for red gain?","answer":"UI range is 0..100; protocol range is 0..100 (0x00..0x64)."}
+{"question":"How do I decode red gain query response?","answer":"Extract tail payload using 00 <len> 00 <data...> <checksum>, parse value byte, then apply decoding formula ui = proto."}
+{"question":"What reply code should I expect after setting red gain?","answer":"Set C223 expects reply code C224 with 2-byte status payload."}
+{"question":"How do I set green gain?","answer":"Use set code C227, encode UI value with formula proto = clamp(round(ui), 0, 100), insert at value index 38, then compute checksum using default sum rule."}
+{"question":"How do I query current green gain?","answer":"Send query set code C225 and parse reply code C226; extract one-byte value from tail payload when applicable."}
+{"question":"What is the UI range for green gain?","answer":"UI range is 0..100; protocol range is 0..100 (0x00..0x64)."}
+{"question":"How do I decode green gain query response?","answer":"Extract tail payload using 00 <len> 00 <data...> <checksum>, parse value byte, then apply decoding formula ui = proto."}
+{"question":"What reply code should I expect after setting green gain?","answer":"Set C227 expects reply code C228 with 2-byte status payload."}
+{"question":"How do I set blue gain?","answer":"Use set code C22B, encode UI value with formula proto = clamp(round(ui), 0, 100), insert at value index 38, then compute checksum using default sum rule."}
+{"question":"How do I query current blue gain?","answer":"Send query set code C229 and parse reply code C22A; extract one-byte value from tail payload when applicable."}
+{"question":"What is the UI range for blue gain?","answer":"UI range is 0..100; protocol range is 0..100 (0x00..0x64)."}
+{"question":"How do I decode blue gain query response?","answer":"Extract tail payload using 00 <len> 00 <data...> <checksum>, parse value byte, then apply decoding formula ui = proto."}
+{"question":"What reply code should I expect after setting blue gain?","answer":"Set C22B expects reply code C22C with 2-byte status payload."}
+{"question":"How do I set brightness to 70?","answer":"Encode proto value 70 (0x46), use set code C21F, checksum=(0x77+70)&0xFF=0xBD, send packet and expect reply C220."}
+{"question":"How do I set volume to 25?","answer":"Encode proto value 25 (0x19), use set code C203, checksum=(0x5B+25)&0xFF=0x74, send packet and expect reply C204."}
+{"question":"How do I convert hue UI -20 to protocol?","answer":"proto = clamp(round(ui + 50),0,100). For -20, proto=30 (0x1E)."}
+{"question":"How do I convert protocol hue 64 to UI value?","answer":"ui = proto - 50, so 64 maps to +14."}
+{"question":"How do I parse HDMI signal query response?","answer":"For C25B/C25C payload has 4 bytes: HDMI1..HDMI4, each 0x01 signal present or 0x00 no signal."}
+{"question":"What does 00 00 00 01 mean in HDMI query payload?","answer":"HDMI1-3 no signal, HDMI4 signal present."}
+{"question":"How do I distinguish set versus query command behavior?","answer":"Set commands typically return 2-byte status payload ACK. Query commands return value payloads (often 1 byte)."}
+{"question":"Where do I find authoritative command templates?","answer":"Use data/commands.json and commands/command-catalog.md."}
+{"question":"Where do I find real observed TX/RX sessions?","answer":"Use data/examples.json and examples/real-device-examples.md."}
+{"question":"How should AI avoid hallucinating protocol bytes?","answer":"Always quote TX/RX templates from dataset files and state uncertainty when command row is missing."}
+{"question":"How can I map reply codes to commands?","answer":"Use rules/reply-code-map.json."}
+{"question":"How can I map status values to meanings?","answer":"Use rules/status-code-map.json."}
+{"question":"How do I verify checksum on received packet?","answer":"Recompute default checksum over bytes index 8..len-2 and compare with final byte."}
+{"question":"What if workbook instruction and bytes disagree?","answer":"Use raw bytes and derived codes as authoritative, and report mismatch warning."}
+{"question":"How do I parse response payload length?","answer":"Find tail marker 00 <len> 00 near end; len is number of data bytes before checksum."}
+{"question":"What is the algorithm to decode reply code from D0 marker?","answer":"Scan from index 8 for D0, read low at i+1 and high at i+2, combine as high+low uppercase hex."}
+{"question":"How do I build numeric command packets deterministically?","answer":"Use control set template, insert encoded value at valueIndex, then apply checksum mode and write checksum byte."}
+{"question":"Which files are best for RAG grounding?","answer":"knowledge/*.md for rules, commands/*.md for command lookup, data/*.json and rules/*.json for deterministic retrieval."}
+{"question":"What does status 0x0001 mean?","answer":"0x0001 means Success."}
+{"question":"What does status 0x0002 mean?","answer":"0x0002 means Failure: unspecified reason."}
+{"question":"What does status 0x0003 mean?","answer":"0x0003 means Failure: serial port not found."}
+{"question":"What does status 0x0004 mean?","answer":"0x0004 means Failure: no response."}
+{"question":"What does status 0x8001 mean?","answer":"0x8001 means Failure: busy."}
+{"question":"What does status 0x8002 mean?","answer":"0x8002 means Failure: occupied."}

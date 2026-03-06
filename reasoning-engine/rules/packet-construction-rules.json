@@ -1,0 +1,126 @@
+{
+  "header": {
+    "fixedBytesHex": [
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55",
+      "55"
+    ],
+    "length": 7,
+    "description": "All protocol packets begin with seven bytes 0x55."
+  },
+  "commandMarkers": {
+    "primaryMarkerHex": "D0",
+    "directionByteContext": "Marker is scanned from index 8 forward for code extraction."
+  },
+  "numericValueInsertion": {
+    "valueIndexBySetCode": {
+      "C203": {
+        "valueIndex": 38,
+        "checksumIndex": 39
+      },
+      "C21F": {
+        "valueIndex": 38,
+        "checksumIndex": 39
+      },
+      "C217": {
+        "valueIndex": 38,
+        "checksumIndex": 39
+      },
+      "C223": {
+        "valueIndex": 38,
+        "checksumIndex": 39
+      },
+      "C227": {
+        "valueIndex": 38,
+        "checksumIndex": 39
+      },
+      "C22B": {
+        "valueIndex": 38,
+        "checksumIndex": 39
+      },
+      "C259": {
+        "valueIndex": 38,
+        "checksumIndex": 39
+      },
+      "C262": {
+        "valueIndex": 38,
+        "checksumIndex": 39
+      }
+    },
+    "controls": [
+      {
+        "id": "volume",
+        "setCode": "C203",
+        "valueIndex": 38,
+        "checksumIndex": 39
+      },
+      {
+        "id": "brightness",
+        "setCode": "C21F",
+        "valueIndex": 38,
+        "checksumIndex": 39
+      },
+      {
+        "id": "contrast",
+        "setCode": "C217",
+        "valueIndex": 38,
+        "checksumIndex": 39
+      },
+      {
+        "id": "hue",
+        "setCode": "C262",
+        "valueIndex": 38,
+        "checksumIndex": 39
+      },
+      {
+        "id": "saturation",
+        "setCode": "C259",
+        "valueIndex": 38,
+        "checksumIndex": 39
+      },
+      {
+        "id": "red-gain",
+        "setCode": "C223",
+        "valueIndex": 38,
+        "checksumIndex": 39
+      },
+      {
+        "id": "green-gain",
+        "setCode": "C227",
+        "valueIndex": 38,
+        "checksumIndex": 39
+      },
+      {
+        "id": "blue-gain",
+        "setCode": "C22B",
+        "valueIndex": 38,
+        "checksumIndex": 39
+      }
+    ]
+  },
+  "checksum": {
+    "defaultRule": "(sum(bytes[index 8 .. len-2])) & 0xFF",
+    "specialBySetCode": {
+      "C203": {
+        "mode": "formula_base",
+        "expression": "(0x5B + value) & 0xFF",
+        "base": 91
+      },
+      "C21F": {
+        "mode": "formula_base",
+        "expression": "(0x77 + value) & 0xFF",
+        "base": 119
+      }
+    }
+  },
+  "constructionSteps": [
+    "Start from a valid TX template packet.",
+    "Replace numeric value byte at the configured index.",
+    "Recompute checksum using special formula-base rule if set code is C203 or C21F, else use default sum rule.",
+    "Write checksum into final checksum index."
+  ]
+}

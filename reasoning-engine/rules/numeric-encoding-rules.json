@@ -1,0 +1,188 @@
+{
+  "controls": [
+    {
+      "id": "volume",
+      "name": "Volume",
+      "setCode": "C203",
+      "querySetCode": "C201",
+      "queryReplyCode": "C202",
+      "uiRange": {
+        "min": 0,
+        "max": 100
+      },
+      "protocolRange": {
+        "min": 0,
+        "max": 100,
+        "hexMin": "0x00",
+        "hexMax": "0x64"
+      },
+      "encodingFormula": "proto = clamp(round(ui), 0, 100)",
+      "decodingFormula": "ui = proto",
+      "checksumMode": "formula_base",
+      "checksumBase": 91,
+      "valueIndex": 38,
+      "checksumIndex": 39
+    },
+    {
+      "id": "brightness",
+      "name": "Brightness",
+      "setCode": "C21F",
+      "querySetCode": "C21D",
+      "queryReplyCode": "C21E",
+      "uiRange": {
+        "min": 0,
+        "max": 100
+      },
+      "protocolRange": {
+        "min": 0,
+        "max": 100,
+        "hexMin": "0x00",
+        "hexMax": "0x64"
+      },
+      "encodingFormula": "proto = clamp(round(ui), 0, 100)",
+      "decodingFormula": "ui = proto",
+      "checksumMode": "formula_base",
+      "checksumBase": 119,
+      "valueIndex": 38,
+      "checksumIndex": 39
+    },
+    {
+      "id": "contrast",
+      "name": "Contrast",
+      "setCode": "C217",
+      "querySetCode": "C215",
+      "queryReplyCode": "C216",
+      "uiRange": {
+        "min": 0,
+        "max": 100
+      },
+      "protocolRange": {
+        "min": 0,
+        "max": 100,
+        "hexMin": "0x00",
+        "hexMax": "0x64"
+      },
+      "encodingFormula": "proto = clamp(round(ui), 0, 100)",
+      "decodingFormula": "ui = proto",
+      "checksumMode": "sum_bytes_8_to_len_minus_2",
+      "checksumBase": null,
+      "valueIndex": 38,
+      "checksumIndex": 39
+    },
+    {
+      "id": "hue",
+      "name": "Hue",
+      "setCode": "C262",
+      "querySetCode": "C264",
+      "queryReplyCode": "C265",
+      "uiRange": {
+        "min": -50,
+        "max": 50
+      },
+      "protocolRange": {
+        "min": 0,
+        "max": 100,
+        "hexMin": "0x00",
+        "hexMax": "0x64"
+      },
+      "encodingFormula": "proto = clamp(round(ui + 50), 0, 100)",
+      "decodingFormula": "ui = proto - 50",
+      "checksumMode": "sum_bytes_8_to_len_minus_2",
+      "checksumBase": null,
+      "valueIndex": 38,
+      "checksumIndex": 39
+    },
+    {
+      "id": "saturation",
+      "name": "Saturation",
+      "setCode": "C259",
+      "querySetCode": "C257",
+      "queryReplyCode": "C258",
+      "uiRange": {
+        "min": 0,
+        "max": 100
+      },
+      "protocolRange": {
+        "min": 0,
+        "max": 100,
+        "hexMin": "0x00",
+        "hexMax": "0x64"
+      },
+      "encodingFormula": "proto = clamp(round(ui), 0, 100)",
+      "decodingFormula": "ui = proto",
+      "checksumMode": "sum_bytes_8_to_len_minus_2",
+      "checksumBase": null,
+      "valueIndex": 38,
+      "checksumIndex": 39
+    },
+    {
+      "id": "red-gain",
+      "name": "Red Gain",
+      "setCode": "C223",
+      "querySetCode": "C221",
+      "queryReplyCode": "C222",
+      "uiRange": {
+        "min": 0,
+        "max": 100
+      },
+      "protocolRange": {
+        "min": 0,
+        "max": 100,
+        "hexMin": "0x00",
+        "hexMax": "0x64"
+      },
+      "encodingFormula": "proto = clamp(round(ui), 0, 100)",
+      "decodingFormula": "ui = proto",
+      "checksumMode": "sum_bytes_8_to_len_minus_2",
+      "checksumBase": null,
+      "valueIndex": 38,
+      "checksumIndex": 39
+    },
+    {
+      "id": "green-gain",
+      "name": "Green Gain",
+      "setCode": "C227",
+      "querySetCode": "C225",
+      "queryReplyCode": "C226",
+      "uiRange": {
+        "min": 0,
+        "max": 100
+      },
+      "protocolRange": {
+        "min": 0,
+        "max": 100,
+        "hexMin": "0x00",
+        "hexMax": "0x64"
+      },
+      "encodingFormula": "proto = clamp(round(ui), 0, 100)",
+      "decodingFormula": "ui = proto",
+      "checksumMode": "sum_bytes_8_to_len_minus_2",
+      "checksumBase": null,
+      "valueIndex": 38,
+      "checksumIndex": 39
+    },
+    {
+      "id": "blue-gain",
+      "name": "Blue Gain",
+      "setCode": "C22B",
+      "querySetCode": "C229",
+      "queryReplyCode": "C22A",
+      "uiRange": {
+        "min": 0,
+        "max": 100
+      },
+      "protocolRange": {
+        "min": 0,
+        "max": 100,
+        "hexMin": "0x00",
+        "hexMax": "0x64"
+      },
+      "encodingFormula": "proto = clamp(round(ui), 0, 100)",
+      "decodingFormula": "ui = proto",
+      "checksumMode": "sum_bytes_8_to_len_minus_2",
+      "checksumBase": null,
+      "valueIndex": 38,
+      "checksumIndex": 39
+    }
+  ]
+}

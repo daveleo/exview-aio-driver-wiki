@@ -1,0 +1,326 @@
+{
+  "meta": {
+    "generatedAt": "2026-03-06T11:05:54.696Z",
+    "source": {
+      "workbook": "C:/VSC/expromo.dev/eXview_Docs/eXview_AIO_Updated_Protocol.xlsx",
+      "truth": "C:/VSC/expromo.dev/eXview_Docs/truth.json",
+      "certify": "C:/VSC/expromo.dev/eXview_Docs/device-certify.ts"
+    }
+  },
+  "controls": [
+    {
+      "id": "volume",
+      "name": "Volume",
+      "setCode": "C203",
+      "setReplyCode": "C204",
+      "querySetCode": "C201",
+      "queryReplyCode": "C202",
+      "uiRange": {
+        "min": 0,
+        "max": 100
+      },
+      "protocolRange": {
+        "min": 0,
+        "max": 100,
+        "hexMin": "0x00",
+        "hexMax": "0x64"
+      },
+      "encodingFormula": "proto = clamp(round(ui), 0, 100)",
+      "decodingFormula": "ui = proto",
+      "checksumMode": "formula_base",
+      "checksumBase": 91,
+      "valueIndex": 38,
+      "checksumIndex": 39,
+      "setExampleTx": "55 55 55 55 55 55 55 C0 01 03 01 D0 00 D1 03 C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 01 00 00 5B",
+      "setExampleRx": "55 55 55 55 55 55 55 C0 01 03 00 D1 01 D0 04 C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 02 00 01 00 5E",
+      "queryExampleTx": "55 55 55 55 55 55 55 C0 01 03 01 D0 00 D1 01 C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 00 00 58",
+      "queryExampleRx": "55 55 55 55 55 55 55 C0 01 03 00 D1 01 D0 02 C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 01 00 14 6E",
+      "instruction": "Set Command Code: 0xC203  \r\nSet Data (1 byte): 0x00–0x64 (decimal 0～100)\r\n\r\nResponse Command Code: 0xC204  \r\nResponse Data (2 bytes):  \r\n- 0x0001 Success  \r\n- 0x0002 Failure – unspecified reason  \r\n- 0x0003 Failure – serial port not found  \r\n- 0x0004 Failure – no response  \r\n- 0x8001 Failure – busy  \r\n- 0x8002 Failure – occupied (e.g., long-file transfer or firmware upgrade in progress)",
+      "queryInstruction": "Set Command Code: 0xC201  \r\nResponse Command Code: 0xC202  \r\nResponse Data (1 byte): 0x00–0x64 (decimal 0～100)",
+      "warnings": []
+    },
+    {
+      "id": "brightness",
+      "name": "Brightness",
+      "setCode": "C21F",
+      "setReplyCode": "C220",
+      "querySetCode": "C21D",
+      "queryReplyCode": "C21E",
+      "uiRange": {
+        "min": 0,
+        "max": 100
+      },
+      "protocolRange": {
+        "min": 0,
+        "max": 100,
+        "hexMin": "0x00",
+        "hexMax": "0x64"
+      },
+      "encodingFormula": "proto = clamp(round(ui), 0, 100)",
+      "decodingFormula": "ui = proto",
+      "checksumMode": "formula_base",
+      "checksumBase": 119,
+      "valueIndex": 38,
+      "checksumIndex": 39,
+      "setExampleTx": "55 55 55 55 55 55 55 C0 01 03 01 D0 00 D1 1F C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 01 00 00 77",
+      "setExampleRx": "55 55 55 55 55 55 55 C0 01 03 00 D1 01 D0 20 C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 02 00 01 00 7A",
+      "queryExampleTx": "55 55 55 55 55 55 55 C0 01 03 01 D0 00 D1 1D C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 00 00 74",
+      "queryExampleRx": "55 55 55 55 55 55 55 C0 01 03 00 D1 01 D0 1E C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 01 00 64 DA",
+      "instruction": "Set Command Code: 0xC21F  \r\nSet Data (1 byte): 0x00–0x64 (decimal 0～100)\r\n\r\nResponse Command Code: 0xC220  \r\nResponse Data (2 bytes):  \r\n- 0x0001 Success  \r\n- 0x0002 Failure – unspecified reason  \r\n- 0x0003 Failure – serial port not found  \r\n- 0x0004 Failure – no response  \r\n- 0x8001 Failure – busy  \r\n- 0x8002 Failure – occupied (e.g., long file transfer or firmware upgrade in progress)",
+      "queryInstruction": "Set Command Code: 0xC21D  \r\nResponse Command Code: 0xC21E  \r\nResponse Data (1 byte): 0x00–0x64 (decimal 0～100)",
+      "warnings": []
+    },
+    {
+      "id": "contrast",
+      "name": "Contrast",
+      "setCode": "C217",
+      "setReplyCode": "C218",
+      "querySetCode": "C215",
+      "queryReplyCode": "C216",
+      "uiRange": {
+        "min": 0,
+        "max": 100
+      },
+      "protocolRange": {
+        "min": 0,
+        "max": 100,
+        "hexMin": "0x00",
+        "hexMax": "0x64"
+      },
+      "encodingFormula": "proto = clamp(round(ui), 0, 100)",
+      "decodingFormula": "ui = proto",
+      "checksumMode": "sum_bytes_8_to_len_minus_2",
+      "checksumBase": null,
+      "valueIndex": 38,
+      "checksumIndex": 39,
+      "setExampleTx": "55 55 55 55 55 55 55 C0 01 03 01 D0 00 D1 17 C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 01 00 00 6F",
+      "setExampleRx": "55 55 55 55 55 55 55 C0 01 03 00 D1 01 D0 18 C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 02 00 01 00 72",
+      "queryExampleTx": "55 55 55 55 55 55 55 C0 01 03 01 D0 00 D1 15 C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 00 00 6C",
+      "queryExampleRx": "55 55 55 55 55 55 55 C0 01 03 00 D1 01 D0 16 C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 01 00 32 A0",
+      "instruction": "Set Command Code: 0xC217  \r\nSet Data (1 byte): 0x00–0x64 (decimal 0～100)\r\n\r\nResponse Command Code: 0xC218  \r\nResponse Data (2 bytes):  \r\n- 0x0001 Success  \r\n- 0x0002 Failure – unspecified reason  \r\n- 0x0003 Failure – serial port not found  \r\n- 0x0004 Failure – no response  \r\n- 0x8001 Failure – busy  \r\n- 0x8002 Failure – occupied (e.g., long-file transfer or firmware upgrade in progress)",
+      "queryInstruction": "Set Command Code: 0xC215  \r\nResponse Command Code: 0xC216  \r\nResponse Data (1 byte): 0x00–0x64 (decimal 0～100)",
+      "warnings": []
+    },
+    {
+      "id": "hue",
+      "name": "Hue",
+      "setCode": "C262",
+      "setReplyCode": "C263",
+      "querySetCode": "C264",
+      "queryReplyCode": "C265",
+      "uiRange": {
+        "min": -50,
+        "max": 50
+      },
+      "protocolRange": {
+        "min": 0,
+        "max": 100,
+        "hexMin": "0x00",
+        "hexMax": "0x64"
+      },
+      "encodingFormula": "proto = clamp(round(ui + 50), 0, 100)",
+      "decodingFormula": "ui = proto - 50",
+      "checksumMode": "sum_bytes_8_to_len_minus_2",
+      "checksumBase": null,
+      "valueIndex": 38,
+      "checksumIndex": 39,
+      "setExampleTx": "55 55 55 55 55 55 55 C0 01 03 01 D0 00 D1 62 C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 01 00 32 EC",
+      "setExampleRx": "55 55 55 55 55 55 55 C0 01 03 00 D1 01 D0 63 C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 02 00 01 00 BD",
+      "queryExampleTx": "55 55 55 55 55 55 55 C0 01 03 01 D0 00 D1 64 C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 00 00 BB",
+      "queryExampleRx": "55 55 55 55 55 55 55 C0 01 03 00 D1 01 D0 65 C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 01 00 64 21",
+      "instruction": "Set Command Code: 0xC262  \r\nSet Data (1 byte): 0x00–0x64 (decimal 0～100, mapped to –50–50 on the UI)\r\n\r\nResponse Command Code: 0xC263  \r\nResponse Data (2 bytes):  \r\n- 0x0001 Success  \r\n- 0x0002 Failure – unspecified reason  \r\n- 0x0003 Failure – serial port not found  \r\n- 0x0004 Failure – no response  \r\n- 0x8001 Failure – busy  \r\n- 0x8002 Failure – occupied (e.g., long-file transfer or firmware upgrade in progress)",
+      "queryInstruction": "Set Command Code: 0xC264  \r\nResponse Command Code: 0xC265  \r\nResponse Data (1 byte): 0x00–0x64 (decimal 0～100, mapped to –50～50 on the UI)",
+      "warnings": []
+    },
+    {
+      "id": "saturation",
+      "name": "Saturation",
+      "setCode": "C259",
+      "setReplyCode": "C25A",
+      "querySetCode": "C257",
+      "queryReplyCode": "C258",
+      "uiRange": {
+        "min": 0,
+        "max": 100
+      },
+      "protocolRange": {
+        "min": 0,
+        "max": 100,
+        "hexMin": "0x00",
+        "hexMax": "0x64"
+      },
+      "encodingFormula": "proto = clamp(round(ui), 0, 100)",
+      "decodingFormula": "ui = proto",
+      "checksumMode": "sum_bytes_8_to_len_minus_2",
+      "checksumBase": null,
+      "valueIndex": 38,
+      "checksumIndex": 39,
+      "setExampleTx": "55 55 55 55 55 55 55 C0 01 03 01 D0 00 D1 59 C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 01 00 00 B1",
+      "setExampleRx": "55 55 55 55 55 55 55 C0 01 03 00 D1 01 D0 5A C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 02 00 01 00 B4",
+      "queryExampleTx": "55 55 55 55 55 55 55 C0 01 03 01 D0 00 D1 57 C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 00 00 AE",
+      "queryExampleRx": "55 55 55 55 55 55 55 C0 01 03 00 D1 01 D0 58 C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 01 00 64 14",
+      "instruction": "Set Command Code: 0xC259  \r\nSet Data (1 byte): 0x00–0x64 (decimal 0～100)\r\n\r\nResponse Command Code: 0xC25A  \r\nResponse Data (2 bytes):  \r\n- 0x0001 Success  \r\n- 0x0002 Failure – unspecified reason  \r\n- 0x0003 Failure – serial port not found  \r\n- 0x0004 Failure – no response  \r\n- 0x8001 Failure – busy  \r\n- 0x8002 Failure – occupied (e.g., long-file transfer or firmware upgrade in progress)",
+      "queryInstruction": "Set Command Code: 0xC257  \r\nResponse Command Code: 0xC258  \r\nResponse Data (1 byte): 0x00–0x64  (decimal 0～100)",
+      "warnings": []
+    },
+    {
+      "id": "red-gain",
+      "name": "Red Gain",
+      "setCode": "C223",
+      "setReplyCode": "C224",
+      "querySetCode": "C221",
+      "queryReplyCode": "C222",
+      "uiRange": {
+        "min": 0,
+        "max": 100
+      },
+      "protocolRange": {
+        "min": 0,
+        "max": 100,
+        "hexMin": "0x00",
+        "hexMax": "0x64"
+      },
+      "encodingFormula": "proto = clamp(round(ui), 0, 100)",
+      "decodingFormula": "ui = proto",
+      "checksumMode": "sum_bytes_8_to_len_minus_2",
+      "checksumBase": null,
+      "valueIndex": 38,
+      "checksumIndex": 39,
+      "setExampleTx": "55 55 55 55 55 55 55 C0 01 03 01 D0 00 D1 23 C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 01 00 00 7B",
+      "setExampleRx": "55 55 55 55 55 55 55 C0 01 03 00 D1 01 D0 24 C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 02 00 01 00 7E",
+      "queryExampleTx": "55 55 55 55 55 55 55 C0 01 03 01 D0 00 D1 21 C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 00 00 78",
+      "queryExampleRx": "55 55 55 55 55 55 55 C0 01 03 00 D1 01 D0 22 C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 01 00 46 C0",
+      "instruction": "Set Command Code: 0xC223  \r\nSet Data (1 byte): 0x00–0x64 (decimal 0～100)\r\n\r\nResponse Command Code: 0xC224  \r\nResponse Data (2 bytes):  \r\n- 0x0001 Success  \r\n- 0x0002 Failure – unspecified reason  \r\n- 0x0003 Failure – serial port not found  \r\n- 0x0004 Failure – no response  \r\n- 0x8001 Failure – busy  \r\n- 0x8002 Failure – occupied (e.g., long-file transfer or firmware upgrade in progress)",
+      "queryInstruction": "Set Command Code: 0xC221  \r\nResponse Command Code: 0xC222  \r\nResponse Data (1 byte): 0x00–0x64 (decimal 0～100)",
+      "warnings": []
+    },
+    {
+      "id": "green-gain",
+      "name": "Green Gain",
+      "setCode": "C227",
+      "setReplyCode": "C228",
+      "querySetCode": "C225",
+      "queryReplyCode": "C226",
+      "uiRange": {
+        "min": 0,
+        "max": 100
+      },
+      "protocolRange": {
+        "min": 0,
+        "max": 100,
+        "hexMin": "0x00",
+        "hexMax": "0x64"
+      },
+      "encodingFormula": "proto = clamp(round(ui), 0, 100)",
+      "decodingFormula": "ui = proto",
+      "checksumMode": "sum_bytes_8_to_len_minus_2",
+      "checksumBase": null,
+      "valueIndex": 38,
+      "checksumIndex": 39,
+      "setExampleTx": "55 55 55 55 55 55 55 C0 01 03 01 D0 00 D1 27 C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 01 00 00 7F",
+      "setExampleRx": "55 55 55 55 55 55 55 C0 01 03 00 D1 01 D0 28 C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 02 00 01 00 82",
+      "queryExampleTx": "55 55 55 55 55 55 55 C0 01 03 01 D0 00 D1 25 C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 00 00 7C",
+      "queryExampleRx": "55 55 55 55 55 55 55 C0 01 03 00 D1 01 D0 26 C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 01 00 64 E2",
+      "instruction": "Set Command Code: 0xC227  \r\nSet Data (1 byte): 0x00–0x64 (decimal 0～100)\r\n\r\nResponse Command Code: 0xC228  \r\nResponse Data (2 bytes):  \r\n- 0x0001 Success  \r\n- 0x0002 Failure – unspecified reason  \r\n- 0x0003 Failure – serial port not found  \r\n- 0x0004 Failure – no response  \r\n- 0x8001 Failure – busy  \r\n- 0x8002 Failure – occupied (e.g., long-file transfer or firmware upgrade in progress)",
+      "queryInstruction": "Set Command Code: 0xC225  \r\nResponse Command Code: 0xC226  \r\nResponse Data (1 byte): 0x00–0x64 (0 to 100 in decimal)",
+      "warnings": []
+    },
+    {
+      "id": "blue-gain",
+      "name": "Blue Gain",
+      "setCode": "C22B",
+      "setReplyCode": "C22C",
+      "querySetCode": "C229",
+      "queryReplyCode": "C22A",
+      "uiRange": {
+        "min": 0,
+        "max": 100
+      },
+      "protocolRange": {
+        "min": 0,
+        "max": 100,
+        "hexMin": "0x00",
+        "hexMax": "0x64"
+      },
+      "encodingFormula": "proto = clamp(round(ui), 0, 100)",
+      "decodingFormula": "ui = proto",
+      "checksumMode": "sum_bytes_8_to_len_minus_2",
+      "checksumBase": null,
+      "valueIndex": 38,
+      "checksumIndex": 39,
+      "setExampleTx": "55 55 55 55 55 55 55 C0 01 03 01 D0 00 D1 2B C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 01 00 00 83",
+      "setExampleRx": "55 55 55 55 55 55 55 C0 01 03 00 D1 01 D0 2C C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 02 00 01 00 86",
+      "queryExampleTx": "55 55 55 55 55 55 55 C0 01 03 01 D0 00 D1 29 C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 00 00 80",
+      "queryExampleRx": "55 55 55 55 55 55 55 C0 01 03 00 D1 01 D0 2A C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 01 00 64 E6",
+      "instruction": "Set Command Code: 0xC225  \r\nSet Data (1 byte): 0x00–0x64 (decimal 0–100)\r\n\r\nResponse Command Code: 0xC22C  \r\nResponse Data (2 bytes):  \r\n- 0x0001 Success  \r\n- 0x0002 Failure – unspecified reason  \r\n- 0x0003 Failure – serial port not found  \r\n- 0x0004 Failure – no response  \r\n- 0x8001 Failure – busy  \r\n- 0x8002 Failure – occupied (e.g., long-file transfer or firmware upgrade in progress)",
+      "queryInstruction": "Set Command Code: 0xC229  \r\nResponse Command Code: 0xC22A  \r\nResponse Data (1 byte): 0x00–0x64 (decimal 0–100)",
+      "warnings": [
+        {
+          "source_sheet": "eXview AIO Main Protocol",
+          "source_row": 101,
+          "function": "Set blue gain",
+          "description": "0",
+          "issue": "set_code_mismatch",
+          "set_code_instruction": "C225",
+          "set_code_derived": "C22B",
+          "reply_code_instruction": "C22C",
+          "reply_code_derived": "C22C",
+          "tx_hex_raw": "55 55 55 55 55 55 55 C0 01 03 01 D0 00 D1 2B C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 01 00 00 83",
+          "rx_hex_raw": "55 55 55 55 55 55 55 C0 01 03 00 D1 01 D0 2C C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 02 00 01 00 86"
+        },
+        {
+          "source_sheet": "eXview AIO Main Protocol",
+          "source_row": 102,
+          "function": "Set blue gain",
+          "description": "25",
+          "issue": "set_code_mismatch",
+          "set_code_instruction": "C225",
+          "set_code_derived": "C22B",
+          "reply_code_instruction": "C22C",
+          "reply_code_derived": "C22C",
+          "tx_hex_raw": "55 55 55 55 55 55 55 C0 01 03 01 D0 00 D1 2B C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 01 00 19 9C",
+          "rx_hex_raw": "55 55 55 55 55 55 55 C0 01 03 00 D1 01 D0 2C C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 02 00 01 00 86"
+        },
+        {
+          "source_sheet": "eXview AIO Main Protocol",
+          "source_row": 103,
+          "function": "Set blue gain",
+          "description": "50",
+          "issue": "set_code_mismatch",
+          "set_code_instruction": "C225",
+          "set_code_derived": "C22B",
+          "reply_code_instruction": "C22C",
+          "reply_code_derived": "C22C",
+          "tx_hex_raw": "55 55 55 55 55 55 55 C0 01 03 01 D0 00 D1 2B C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 01 00 32 B5",
+          "rx_hex_raw": "55 55 55 55 55 55 55 C0 01 03 00 D1 01 D0 2C C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 02 00 01 00 86"
+        },
+        {
+          "source_sheet": "eXview AIO Main Protocol",
+          "source_row": 104,
+          "function": "Set blue gain",
+          "description": "75",
+          "issue": "set_code_mismatch",
+          "set_code_instruction": "C225",
+          "set_code_derived": "C22B",
+          "reply_code_instruction": "C22C",
+          "reply_code_derived": "C22C",
+          "tx_hex_raw": "55 55 55 55 55 55 55 C0 01 03 01 D0 00 D1 2B C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 01 00 4B CE",
+          "rx_hex_raw": "55 55 55 55 55 55 55 C0 01 03 00 D1 01 D0 2C C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 02 00 01 00 86"
+        },
+        {
+          "source_sheet": "eXview AIO Main Protocol",
+          "source_row": 105,
+          "function": "Set blue gain",
+          "description": "100",
+          "issue": "set_code_mismatch",
+          "set_code_instruction": "C225",
+          "set_code_derived": "C22B",
+          "reply_code_instruction": "C22C",
+          "reply_code_derived": "C22C",
+          "tx_hex_raw": "55 55 55 55 55 55 55 C0 01 03 01 D0 00 D1 2B C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 01 00 64 E7",
+          "rx_hex_raw": "55 55 55 55 55 55 55 C0 01 03 00 D1 01 D0 2C C2 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 00 02 00 01 00 86"
+        }
+      ]
+    }
+  ]
+}

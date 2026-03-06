@@ -1,0 +1,918 @@
+{
+  "0xC002": {
+    "replyCode": "0xC002",
+    "commandCount": 3,
+    "commands": [
+      {
+        "function": "Request device status",
+        "description": "Idle",
+        "setCode": "C001",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 2
+      },
+      {
+        "function": "Request device status",
+        "description": "Busy",
+        "setCode": "C001",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 3
+      },
+      {
+        "function": "Request device status",
+        "description": "Device Exception",
+        "setCode": "C001",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 4
+      }
+    ]
+  },
+  "0xC004": {
+    "replyCode": "0xC004",
+    "commandCount": 2,
+    "commands": [
+      {
+        "function": "Power on/off",
+        "description": "Sleep",
+        "setCode": "C003",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 5
+      },
+      {
+        "function": "Power on/off",
+        "description": "Wake Up",
+        "setCode": "C003",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 6
+      }
+    ]
+  },
+  "0xC006": {
+    "replyCode": "0xC006",
+    "commandCount": 2,
+    "commands": [
+      {
+        "function": "Query screen status",
+        "description": "Query whether the device is in sleep/wake mode",
+        "setCode": "C005",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 107
+      },
+      {
+        "function": "Query screen status",
+        "description": "",
+        "setCode": "C005",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 108
+      }
+    ]
+  },
+  "0xC008": {
+    "replyCode": "0xC008",
+    "commandCount": 1,
+    "commands": [
+      {
+        "function": "Standby and restart",
+        "description": "Standby (Power Off State)",
+        "setCode": "C007",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 7
+      }
+    ]
+  },
+  "0xC00A": {
+    "replyCode": "0xC00A",
+    "commandCount": 1,
+    "commands": [
+      {
+        "function": "Standby and restart",
+        "description": "Restart",
+        "setCode": "C009",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 8
+      }
+    ]
+  },
+  "0xC202": {
+    "replyCode": "0xC202",
+    "commandCount": 1,
+    "commands": [
+      {
+        "function": "Query volume level",
+        "description": "Get Current Volume Value",
+        "setCode": "C201",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 21
+      }
+    ]
+  },
+  "0xC204": {
+    "replyCode": "0xC204",
+    "commandCount": 11,
+    "commands": [
+      {
+        "function": "Set volume level",
+        "description": "0",
+        "setCode": "C203",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 10
+      },
+      {
+        "function": "Set volume level",
+        "description": "10",
+        "setCode": "C203",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 11
+      },
+      {
+        "function": "Set volume level",
+        "description": "20",
+        "setCode": "C203",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 12
+      },
+      {
+        "function": "Set volume level",
+        "description": "30",
+        "setCode": "C203",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 13
+      },
+      {
+        "function": "Set volume level",
+        "description": "40",
+        "setCode": "C203",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 14
+      },
+      {
+        "function": "Set volume level",
+        "description": "50",
+        "setCode": "C203",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 15
+      },
+      {
+        "function": "Set volume level",
+        "description": "60",
+        "setCode": "C203",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 16
+      },
+      {
+        "function": "Set volume level",
+        "description": "70",
+        "setCode": "C203",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 17
+      },
+      {
+        "function": "Set volume level",
+        "description": "80",
+        "setCode": "C203",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 18
+      },
+      {
+        "function": "Set volume level",
+        "description": "90",
+        "setCode": "C203",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 19
+      },
+      {
+        "function": "Set volume level",
+        "description": "100",
+        "setCode": "C203",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 20
+      }
+    ]
+  },
+  "0xC212": {
+    "replyCode": "0xC212",
+    "commandCount": 1,
+    "commands": [
+      {
+        "function": "Query video source",
+        "description": "Query current video source",
+        "setCode": "C211",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 82
+      }
+    ]
+  },
+  "0xC214": {
+    "replyCode": "0xC214",
+    "commandCount": 6,
+    "commands": [
+      {
+        "function": "Set video source",
+        "description": "0(ANDROID)",
+        "setCode": "C213",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 58
+      },
+      {
+        "function": "Set video source",
+        "description": "1 (PC Reserved)",
+        "setCode": "C213",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 59
+      },
+      {
+        "function": "Set video source",
+        "description": "2(HDMI1)",
+        "setCode": "C213",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 60
+      },
+      {
+        "function": "Set video source",
+        "description": "3(HDMI2)",
+        "setCode": "C213",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 61
+      },
+      {
+        "function": "Set video source",
+        "description": "4(HDMI3)",
+        "setCode": "C213",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 62
+      },
+      {
+        "function": "Set video source",
+        "description": "5(HDMI4)",
+        "setCode": "C213",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 63
+      }
+    ]
+  },
+  "0xC216": {
+    "replyCode": "0xC216",
+    "commandCount": 1,
+    "commands": [
+      {
+        "function": "Query contrast level",
+        "description": "Query Current Contrast",
+        "setCode": "C215",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 70
+      }
+    ]
+  },
+  "0xC218": {
+    "replyCode": "0xC218",
+    "commandCount": 5,
+    "commands": [
+      {
+        "function": "Set contrast level",
+        "description": "0",
+        "setCode": "C217",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 65
+      },
+      {
+        "function": "Set contrast level",
+        "description": "25",
+        "setCode": "C217",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 66
+      },
+      {
+        "function": "Set contrast level",
+        "description": "50",
+        "setCode": "C217",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 67
+      },
+      {
+        "function": "Set contrast level",
+        "description": "75",
+        "setCode": "C217",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 68
+      },
+      {
+        "function": "Set contrast level",
+        "description": "100",
+        "setCode": "C217",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 69
+      }
+    ]
+  },
+  "0xC21C": {
+    "replyCode": "0xC21C",
+    "commandCount": 4,
+    "commands": [
+      {
+        "function": "Set color temperature mode",
+        "description": "Standard 0x01",
+        "setCode": "C21B",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 71
+      },
+      {
+        "function": "Set color temperature mode",
+        "description": "Warm Color 0x02",
+        "setCode": "C21B",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 72
+      },
+      {
+        "function": "Set color temperature mode",
+        "description": "Cool Color 0x03",
+        "setCode": "C21B",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 73
+      },
+      {
+        "function": "Set color temperature mode",
+        "description": "User 0x04",
+        "setCode": "C21B",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 74
+      }
+    ]
+  },
+  "0xC21E": {
+    "replyCode": "0xC21E",
+    "commandCount": 1,
+    "commands": [
+      {
+        "function": "Query brightness level",
+        "description": "Query Current Brightness Value",
+        "setCode": "C21D",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 33
+      }
+    ]
+  },
+  "0xC220": {
+    "replyCode": "0xC220",
+    "commandCount": 11,
+    "commands": [
+      {
+        "function": "Set brightness level",
+        "description": "0",
+        "setCode": "C21F",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 22
+      },
+      {
+        "function": "Set brightness level",
+        "description": "10",
+        "setCode": "C21F",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 23
+      },
+      {
+        "function": "Set brightness level",
+        "description": "20",
+        "setCode": "C21F",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 24
+      },
+      {
+        "function": "Set brightness level",
+        "description": "30",
+        "setCode": "C21F",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 25
+      },
+      {
+        "function": "Set brightness level",
+        "description": "40",
+        "setCode": "C21F",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 26
+      },
+      {
+        "function": "Set brightness level",
+        "description": "50",
+        "setCode": "C21F",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 27
+      },
+      {
+        "function": "Set brightness level",
+        "description": "60",
+        "setCode": "C21F",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 28
+      },
+      {
+        "function": "Set brightness level",
+        "description": "70",
+        "setCode": "C21F",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 29
+      },
+      {
+        "function": "Set brightness level",
+        "description": "80",
+        "setCode": "C21F",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 30
+      },
+      {
+        "function": "Set brightness level",
+        "description": "90",
+        "setCode": "C21F",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 31
+      },
+      {
+        "function": "Set brightness level",
+        "description": "100",
+        "setCode": "C21F",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 32
+      }
+    ]
+  },
+  "0xC222": {
+    "replyCode": "0xC222",
+    "commandCount": 1,
+    "commands": [
+      {
+        "function": "Query red gain value",
+        "description": "Query Current Red Gain Value",
+        "setCode": "C221",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 94
+      }
+    ]
+  },
+  "0xC224": {
+    "replyCode": "0xC224",
+    "commandCount": 5,
+    "commands": [
+      {
+        "function": "Set red gain",
+        "description": "0",
+        "setCode": "C223",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 89
+      },
+      {
+        "function": "Set red gain",
+        "description": "25",
+        "setCode": "C223",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 90
+      },
+      {
+        "function": "Set red gain",
+        "description": "50",
+        "setCode": "C223",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 91
+      },
+      {
+        "function": "Set red gain",
+        "description": "75",
+        "setCode": "C223",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 92
+      },
+      {
+        "function": "Set red gain",
+        "description": "100",
+        "setCode": "C223",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 93
+      }
+    ]
+  },
+  "0xC226": {
+    "replyCode": "0xC226",
+    "commandCount": 1,
+    "commands": [
+      {
+        "function": "Query current green gain value",
+        "description": "",
+        "setCode": "C225",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 100
+      }
+    ]
+  },
+  "0xC228": {
+    "replyCode": "0xC228",
+    "commandCount": 5,
+    "commands": [
+      {
+        "function": "Set green gain",
+        "description": "0",
+        "setCode": "C227",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 95
+      },
+      {
+        "function": "Set green gain",
+        "description": "25",
+        "setCode": "C227",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 96
+      },
+      {
+        "function": "Set green gain",
+        "description": "50",
+        "setCode": "C227",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 97
+      },
+      {
+        "function": "Set green gain",
+        "description": "75",
+        "setCode": "C227",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 98
+      },
+      {
+        "function": "Set green gain",
+        "description": "100",
+        "setCode": "C227",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 99
+      }
+    ]
+  },
+  "0xC22A": {
+    "replyCode": "0xC22A",
+    "commandCount": 1,
+    "commands": [
+      {
+        "function": "Query current blue gain value",
+        "description": "",
+        "setCode": "C229",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 106
+      }
+    ]
+  },
+  "0xC22C": {
+    "replyCode": "0xC22C",
+    "commandCount": 5,
+    "commands": [
+      {
+        "function": "Set blue gain",
+        "description": "0",
+        "setCode": "C225",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 101
+      },
+      {
+        "function": "Set blue gain",
+        "description": "25",
+        "setCode": "C225",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 102
+      },
+      {
+        "function": "Set blue gain",
+        "description": "50",
+        "setCode": "C225",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 103
+      },
+      {
+        "function": "Set blue gain",
+        "description": "75",
+        "setCode": "C225",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 104
+      },
+      {
+        "function": "Set blue gain",
+        "description": "100",
+        "setCode": "C225",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 105
+      }
+    ]
+  },
+  "0xC242": {
+    "replyCode": "0xC242",
+    "commandCount": 1,
+    "commands": [
+      {
+        "function": "Get video combination information",
+        "description": "",
+        "setCode": "C241",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 75
+      }
+    ]
+  },
+  "0xC244": {
+    "replyCode": "0xC244",
+    "commandCount": 1,
+    "commands": [
+      {
+        "function": "Query scene mode",
+        "description": "",
+        "setCode": "C243",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 88
+      }
+    ]
+  },
+  "0xC246": {
+    "replyCode": "0xC246",
+    "commandCount": 5,
+    "commands": [
+      {
+        "function": "Set scene mode",
+        "description": "Conference mode",
+        "setCode": "C245",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 83
+      },
+      {
+        "function": "Set scene mode",
+        "description": "Standard/Demo mode",
+        "setCode": "C245",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 84
+      },
+      {
+        "function": "Set scene mode",
+        "description": "Soft/Eco mode",
+        "setCode": "C245",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 85
+      },
+      {
+        "function": "Set scene mode",
+        "description": "Custom mode",
+        "setCode": "C245",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 86
+      },
+      {
+        "function": "Set scene mode",
+        "description": "Theater mode",
+        "setCode": "C245",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 87
+      }
+    ]
+  },
+  "0xC24A": {
+    "replyCode": "0xC24A",
+    "commandCount": 5,
+    "commands": [
+      {
+        "function": "Split screen mode",
+        "description": "Full screen mode",
+        "setCode": "C249",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 76
+      },
+      {
+        "function": "Split screen mode",
+        "description": "Dual screen mode",
+        "setCode": "C249",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 77
+      },
+      {
+        "function": "Split screen mode",
+        "description": "Center mode",
+        "setCode": "C249",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 78
+      },
+      {
+        "function": "Split screen mode",
+        "description": "Quadrature split screen mode",
+        "setCode": "C249",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 79
+      },
+      {
+        "function": "Split screen mode",
+        "description": "Five-split screen mode",
+        "setCode": "C249",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 80
+      }
+    ]
+  },
+  "0xC258": {
+    "replyCode": "0xC258",
+    "commandCount": 1,
+    "commands": [
+      {
+        "function": "Query saturation level",
+        "description": "Query Current Saturation Value",
+        "setCode": "C257",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 45
+      }
+    ]
+  },
+  "0xC25A": {
+    "replyCode": "0xC25A",
+    "commandCount": 11,
+    "commands": [
+      {
+        "function": "Set saturation level",
+        "description": "0",
+        "setCode": "C259",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 34
+      },
+      {
+        "function": "Set saturation level",
+        "description": "10",
+        "setCode": "C259",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 35
+      },
+      {
+        "function": "Set saturation level",
+        "description": "20",
+        "setCode": "C259",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 36
+      },
+      {
+        "function": "Set saturation level",
+        "description": "30",
+        "setCode": "C259",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 37
+      },
+      {
+        "function": "Set saturation level",
+        "description": "40",
+        "setCode": "C259",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 38
+      },
+      {
+        "function": "Set saturation level",
+        "description": "50",
+        "setCode": "C259",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 39
+      },
+      {
+        "function": "Set saturation level",
+        "description": "60",
+        "setCode": "C259",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 40
+      },
+      {
+        "function": "Set saturation level",
+        "description": "70",
+        "setCode": "C259",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 41
+      },
+      {
+        "function": "Set saturation level",
+        "description": "80",
+        "setCode": "C259",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 42
+      },
+      {
+        "function": "Set saturation level",
+        "description": "90",
+        "setCode": "C259",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 43
+      },
+      {
+        "function": "Set saturation level",
+        "description": "100",
+        "setCode": "C259",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 44
+      }
+    ]
+  },
+  "0xC25C": {
+    "replyCode": "0xC25C",
+    "commandCount": 2,
+    "commands": [
+      {
+        "function": "Ark1 additional command 0xC25B",
+        "description": "Additional command from Ark1 sheet",
+        "setCode": "C25B",
+        "sourceSheet": "eXview AIO Ark1 Addendum",
+        "sourceRow": 1
+      },
+      {
+        "function": "HDMI signal query",
+        "description": "Query the current HDMI signal",
+        "setCode": "C25B",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 64
+      }
+    ]
+  },
+  "0xC263": {
+    "replyCode": "0xC263",
+    "commandCount": 11,
+    "commands": [
+      {
+        "function": "Set hue(color tone) level",
+        "description": "-50",
+        "setCode": "C262",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 46
+      },
+      {
+        "function": "Set hue(color tone) level",
+        "description": "-40",
+        "setCode": "C262",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 47
+      },
+      {
+        "function": "Set hue(color tone) level",
+        "description": "-30",
+        "setCode": "C262",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 48
+      },
+      {
+        "function": "Set hue(color tone) level",
+        "description": "-20",
+        "setCode": "C262",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 49
+      },
+      {
+        "function": "Set hue(color tone) level",
+        "description": "-10",
+        "setCode": "C262",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 50
+      },
+      {
+        "function": "Set hue(color tone) level",
+        "description": "0",
+        "setCode": "C262",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 51
+      },
+      {
+        "function": "Set hue(color tone) level",
+        "description": "10",
+        "setCode": "C262",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 52
+      },
+      {
+        "function": "Set hue(color tone) level",
+        "description": "20",
+        "setCode": "C262",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 53
+      },
+      {
+        "function": "Set hue(color tone) level",
+        "description": "30",
+        "setCode": "C262",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 54
+      },
+      {
+        "function": "Set hue(color tone) level",
+        "description": "40",
+        "setCode": "C262",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 55
+      },
+      {
+        "function": "Set hue(color tone) level",
+        "description": "50",
+        "setCode": "C262",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 56
+      }
+    ]
+  },
+  "0xC265": {
+    "replyCode": "0xC265",
+    "commandCount": 1,
+    "commands": [
+      {
+        "function": "Query hue level",
+        "description": "Query Current Hue Value",
+        "setCode": "C264",
+        "sourceSheet": "eXview AIO Main Protocol",
+        "sourceRow": 57
+      }
+    ]
+  }
+}
